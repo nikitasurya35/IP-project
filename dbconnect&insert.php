@@ -16,6 +16,7 @@ $pwd = mysqli_real_escape_string($link, $_REQUEST['pwd']);
 $sql = "INSERT INTO signup (uname,pwd) VALUES ('$uname','$pwd')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
+    header('Location: home1.php');
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
