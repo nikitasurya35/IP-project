@@ -1,8 +1,10 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="main.css">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -86,19 +88,6 @@ button:hover {
   padding: 10px 18px;
   background-color: #f44336;
 }
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 0px  0px ;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 10%;
-  border-radius: 5%;
-}
-
 /* Add padding to containers */
 .containerr {
   padding: 16px;
@@ -201,7 +190,6 @@ span.psw {
 }
     .button2 {background-color: #4CAF50;} /* Green */
 </style>
-</head>
 <body>
   <div class="container">
   <div class="centered">
@@ -210,6 +198,8 @@ span.psw {
      <a href="http://localhost/ip/home1.php"><button style.display='block'>Home</button></a>
       <a href="#login"><button onclick="document.getElementById('id01').style.display='block'">Login</button></a>
       <!--a href="#contact"><button style.display='block'>Contact</button></a-->
+      <a href="#"><h2>hello, <?php echo $_SESSION['uname']; ?></h2></a>
+      <a href="logout.php"><h3 align="left">logout</h3></a>
     </div>
   </div>
 </div>
@@ -225,10 +215,7 @@ span.psw {
 class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="profile.png" alt="Avatar" class="avatar">
-    </div>
+  <form class="modal-content animate" action="log1.php">
 
     <div class="containerr">
       <label for="uname"><b>Username</b></label>
@@ -236,6 +223,13 @@ class="close" title="Close Modal">&times;</span>
 
       <label for="pwd"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pwd" required>
+
+      <select name="type" name="">
+        <option value="admin" name="admin">admin</option>
+        <option value="user" name="user">user</option>
+      </select>
+      <br>
+      <br>
 
       <button type="submit">Login</button>
       <label>
