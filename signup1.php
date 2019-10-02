@@ -132,6 +132,12 @@ hr {
 
       <!--label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required-->
+      <select name="type">
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+      </select>
+      <br>
+      <br>
      
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -146,18 +152,6 @@ hr {
     </div>
   </form>
 <!--/div-->
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
 </body>
 </html>
