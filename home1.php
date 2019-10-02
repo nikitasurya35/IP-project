@@ -1,9 +1,9 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="main.css">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -26,6 +26,7 @@ div {
   background-size: cover;
   width:1345px;  
   height:650px;
+  max-width: 100%;
   opacity: 1;
   /* Needed to position the navbar */
   position: relative;
@@ -101,18 +102,6 @@ button:hover {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 0px  0px ;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 10%;
-  border-radius: 5%;
 }
 
 /* Add padding to containers */
@@ -203,8 +192,9 @@ span.psw {
   text-align: center;
   color: white;
 }
+
+
 </style>
-</head>
 <body>
 <div class="bg-img">
   <div class="container">
@@ -215,7 +205,7 @@ span.psw {
       <a href="#login"><button onclick="document.getElementById('id01').style.display='block'">Login</button></a>
       <!--a href="#contact"><button style.display='block'>Contact</button></a-->
       <a href="#about"><button style.display='block'>About Us</button></a>
-      <a href="#"><h2>hello, <?php echo $_SESSION["uname"]; ?></h2></a>
+      <a href="#"><h2>hello, <?php echo $_SESSION['uname']; ?></h2></a>
       <a href="logout.php"><h3 align="left">logout</h3></a>
     </div>
   </div>
@@ -227,10 +217,8 @@ span.psw {
 class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
-  <form class="modal-content animate" action="login.php" method="post">
-    <!--div class="imgcontainer">
-      <img src="profile.png" alt="Avatar" class="avatar">
-    </div-->
+  <form class="modal-content animate" action="log1.php" method="post">
+    
 
     <div class="containerr">
       <label for="uname"><b>Username</b></label>
@@ -238,6 +226,13 @@ class="close" title="Close Modal">&times;</span>
 
       <label for="pwd"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="pwd" required>
+
+      <select name="type" name="">
+        <option value="admin" name="admin">admin</option>
+        <option value="user" name="user">user</option>
+      </select>
+      <br>
+      <br>
 
       <button type="submit">Login</button>
       <label>
@@ -271,18 +266,19 @@ class="close" title="Close Modal">&times;</span>
 <img border="0" alt="place" src="place1.jpg" width="300" height="300">
 </a>
 </p>
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <h1 style="text-align: center; font-style: bold; font-size: 35px; padding: 20px"><a  name="about"> ABOUT US </a></h1>
 <p style="padding-top: 0px; padding-right: 30px; padding-left: 30px;padding-bottom: 30px; font-style: bold; font-size: 25px; font-family: Times New Roman; text-align: justify-all;">
-  Industry Visit Tour System is a specific web based reservation system designed to make it easier for people or college to book industrial tour packages online. The most important part of the Industry Visit tour project is its database. The database is full of Buses, Trains, Airplane timings and availability. Online travel agency is a web based project where a user may search and apply for a travel service or package. The system allows the user to check various travel destinations and choose his destination accordingly. The software system checks for user choice and then queries the database for various available mediums to travel to that destination. The system then loads all that data and puts those choices in front of the user. The user can now choose various ways to reach his destination. When the user chooses the Bus, train or Airplane option, the system also allows the user to book tickets to the destination for the desire day and timings.
+  Industry Visit Tour System is a specific web based reservation system designed to make it easier for people or college to book industrial tour packages online. The system allows the user to check various travel destinations and choose his destination accordingly. 
 </p>
 
 
