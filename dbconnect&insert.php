@@ -11,12 +11,13 @@ if($link === false){
 // Escape user inputs for security
 $uname = mysqli_real_escape_string($link, $_REQUEST['uname']);
 $pwd = mysqli_real_escape_string($link, $_REQUEST['pwd']);
+$type = mysqli_real_escape_string($link, $_REQUEST['type']);
  
 // Attempt insert query execution
-$sql = "INSERT INTO signup (uname,pwd) VALUES ('$uname','$pwd')";
+$sql = "INSERT INTO signup (uname,pwd,type) VALUES ('$uname','$pwd','$type')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
-    header('Location: home1.php');
+    header('Location: home.php');
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
